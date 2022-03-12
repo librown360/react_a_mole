@@ -3,10 +3,10 @@ import { useState } from 'react';
 import MoleContainer from './MoleContainer';
 
 function App() {
-  // Scoring variable
+  // Scoring state
   let [score, setScore] = useState(0)
 
-  // Generate molehill
+  // Generate Molehill
   const createMoleHill = () => {
       let hills = []
       for (let i = 0; i < 9; i++) {
