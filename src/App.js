@@ -18,7 +18,7 @@ function App() {
         )
       }
       return (
-        <div>
+        <div className='hills'>
           {hills}
         </div>
       )
@@ -27,7 +27,8 @@ function App() {
   return (
     <div className="App">
       <h1>React-a-Mole!</h1>
-      {score}
+      <h3>Score: {score}</h3>
+        
       {createMoleHill()}
     </div>
   );

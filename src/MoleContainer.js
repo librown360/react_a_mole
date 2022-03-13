@@ -5,24 +5,22 @@ import { useState } from 'react'
 
 function MoleContainer(props) {
     // Display state
-    let [displayMole, setDisplayMole] = useState(false)
-
-    // Determine display to render
-    displayMole ? <EmptySlot /> : <Mole />
+    let [mole, setMole] = useState(false)
 
     // Handle Mole Bopping
-    const moleBopped = () => {
+    const handleClick = (e) => {
         //increment score by 1
         props.setScore(props.score + 1)
-        //setDisplayMole to back to false
-        setDisplayMole = false
-    }
+        //setMole back to false
+        setMole(false)
+        }
 
+    // Determine which display to render
+    let displayMole =  mole ? <Mole setScore={props.setScore} toggle={setMole} handleClick={handleClick} /> : <EmptySlot toggle={setMole} />
+       
     return (
         <div>
             {displayMole}
-            <Mole />
-            <EmptySlot />
         </div>
     )
 }
